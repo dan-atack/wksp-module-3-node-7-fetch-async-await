@@ -25,10 +25,19 @@ newPauseFunction(1)
     .then(data => console.log(data));
 ```
 
-_let's convert it to async/await_
-
 ---
+_let's convert it to async/await_
+---
+```js
 
+const doIt = async () => {
+    await newPauseFunction(1);
+    await newPauseFunction(2);
+    await newPauseFunction(3);
+    await newPauseFunction(4);
+    console.log("no more \'awaits\'");
+}
+```
 ### Exercise
 
 Convert the following to async/await
@@ -44,6 +53,17 @@ transformText(string)
         return str;
     })
     .catch((err) => console.log(err));
+
+
+const transformer = async () => {
+    let data = await transformText(str);
+    data = await allCaps(data);
+    data = await trimFirst(data);
+    data = await trimLast(data);
+    data = await replacewithX(data);
+    console.log("transformation complete", data);
+}
+
 ```
 
 ---

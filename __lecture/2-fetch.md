@@ -31,7 +31,7 @@ fetch('<URL>')
 ### `POST
 
 ```js
-fetch('<URL>'{
+fetch('<URL>',{
         method: 'POST', // (optional) for `GET`
         mode: '',       // (optional) no-cors, *cors, same-origin
         cache: '',      // (optional) no-cache, reload, force-cache, only-if-cached
