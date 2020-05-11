@@ -1,27 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0, minimal-ui" />
-        <link rel="stylesheet" href="./styles.css" />
-        <title>So funny</title>
-    </head>
-    <body>
-        <div class='centered-container'>
-            <form>
-                <label>
-                    Gimme a
-                    <select id="type" name="type" class='joke-select'>
-                        <option value='undefined'>Select</option>
-                        <option value='dad'>dad</option>
-                        <option value='geek'>geek</option>
-                        <option value='tronald'>tronald</option>
-                    </select>
-                    Joke,
-                </label>
-                <button type="submit">NOW!!</button>
-            </form>
-        </div>
-        <script src="scripts.js"></script>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0, minimal-ui"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>So funny</title>
+  </head>
+  <body>
+    <div class="centered-container">
+      <form onchange="handleSubmit(event)">
+        <label>
+          Gimme a
+          <select id="type" name="type" class="joke-select">
+            <option value="undefined">Select</option>
+            <option value="dad">dad</option>
+            <option value="geek">geek</option>
+            <option value="tronald">tronald</option>
+          </select>
+          Joke,
+        </label>
+        <button type="button">NOW!!</button>
+      </form>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
 </html>

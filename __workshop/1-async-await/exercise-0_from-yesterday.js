@@ -15,8 +15,14 @@ const compareToTen = (num) => {
 }
 
 const myFunc = async (num) => {
-    // add code here
-}
+    try {
+        let outcome = await compareToTen(num);
+        console.log(outcome);
+    }
+    catch(err) {
+        console.log(err);
+    }
+};
 
 myFunc(15);
 myFunc(8);
@@ -29,30 +35,40 @@ myFunc(8);
 // and then the second function, sortWords(), will sort the words in alphabetical order.
 // If the array contains anything but strings, it should throw an error.
 
-const makeAllCaps = (array) => {
-    return new Promise((resolve, reject) => {
+const makeAllCaps = (ray) => {
+    let x = new Promise((resolve, reject) => {
 
-        if (array.every(word => typeof word === 'string')) {
-                resolve(array.map(word => word.toUpperCase()));
+        if (ray.every(word => (typeof word === 'string'))) {
+                resolve(ray.map(word => word.toUpperCase()));
             } else {
                 reject('Error: Not all items in the array are strings!')
             }
     });
+    return x;
 }
 
-const sortWords = (array) => {
-    return new Promise((resolve, reject) => {
+const sortWords = (ray) => {
+    let y = new Promise((resolve, reject) => {
 
-        if (array.every(word => typeof word === 'string')) {
-                resolve(array.sort());
+        if (ray.every(word => typeof word === 'string')) {
+                resolve(ray.sort());
         } else {
             reject('Error: Something went wrong with sorting words.') 
         }
     })
-} 
+    return y;
+}
 
-const textTransform = async (array) => {
-    // add code here
+const textTransform = async (ray) => {
+    try {
+        let capitalized = await makeAllCaps(ray);
+        capitalized = await sortWords(capitalized);
+        console.log(capitalized);
+
+    }
+    catch(err) {
+        console.log(err);
+    }
 }
 
 textTransform(['cucumber', 'tomatos', 'avocado']);
